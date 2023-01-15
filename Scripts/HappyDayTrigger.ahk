@@ -5,7 +5,7 @@
 Distributed under the Unlicense <https://unlicense.org>
 */
 
-#Include "HappyDay.ahk"
+#Include "Lib\HappyDay.ahk"
 
 ; Insert "happy <day_of_week>" with the trigger string "happyday", replicating the standard case conformance pattern.
 :C:HAPPYDAY::
