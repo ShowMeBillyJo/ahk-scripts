@@ -5,7 +5,7 @@
 Distributed under the Unlicense <https://unlicense.org>
 */
 
-#Include "Dashes.ahk"
+#Include "Lib\Dashes.ahk"
 
 ; Insert a dash on the hotstring sequence of two or more hyphens. If the end char is a hyphen (ie, three hyphens in a
 ; row), write an em dash, else an en dash.
