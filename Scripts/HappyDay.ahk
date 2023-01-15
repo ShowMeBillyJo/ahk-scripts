@@ -19,7 +19,9 @@ options (everything up to and including the second colon (:)), ensuring it acts 
 while "happyday" doesn't, this results in the two specific cases (X_CaseUpper and X_CaseFirstUpper) and the default case
 (X_CaseLower) needed for case conformance.
 
-If the Trigger parameter is unset or an empty string (""), the phrase is rendered as X_CaseLower.
+If the Trigger parameter is unset or an empty string (""), the phrase is rendered in X_CaseLower.
+
+Distributed under the Unlicense <https://unlicense.org>
 */
 
 SendHappyDay(Trigger?)

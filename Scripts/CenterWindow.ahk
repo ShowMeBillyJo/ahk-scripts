@@ -3,15 +3,20 @@
 
 /*
 Center a window on its monitor, following the parameter conventions of the built-in Win functions. For information about
-WinTitle and related parameters, see https://www.autohotkey.com/docs/v2/misc/WinTitle.htm
+Win parameters and Last Found Window, see https://www.autohotkey.com/docs/v2/misc/WinTitle.htm
 
 Adapted from https://www.autohotkey.com/boards/viewtopic.php?p=78862#p78862
+
+Distributed under the Unlicense <https://unlicense.org>
 */
 
 WinMoveToCenterOnCurrentMonitor(WinTitle?, WinText?, ExcludeTitle?, ExcludeText?)
 {
-    ; Get a window handle using the specified parameters, then get its current width/height
+    ; Get a window handle using the conventional Win function parameters
     windowHandle := WinExist(WinTitle?, WinText?, ExcludeTitle?, ExcludeText?)
+
+    ; Get the same window's current width/height using the Last Found Window convention
+    ; This convention is repeated throughout the rest of the script
     WinGetPos( , , &windowWidth, &windowHeight)
 
     ; Get info about the monitor the window is on

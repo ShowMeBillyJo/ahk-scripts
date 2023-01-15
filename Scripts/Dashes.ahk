@@ -3,6 +3,8 @@
 
 /*
 Helpers for disambiguating en and em dashes, eg in fixed-width fonts.
+
+Distributed under the Unlicense <https://unlicense.org>
 */
 
 X_EnDash := "–"
