@@ -5,7 +5,7 @@
 Distributed under the Unlicense <https://unlicense.org>
 */
 
-#Include "CenterWindow.ahk"
+#Include "Lib\CenterWindow.ahk"
 
 ; Center the active window on its monitor upon pressing Win+Alt+Up. Use the built-in shortcuts Win+Shift+L and
 ; Win+Shift+R to move the window between monitors.
