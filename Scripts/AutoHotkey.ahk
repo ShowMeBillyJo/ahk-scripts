@@ -1,8 +1,8 @@
 #Requires AutoHotkey v2.0
 #Warn
 
-#Include "CenterWindowWithTrigger.ahk"
+#Include "CenterWindowTrigger.ahk"
 
-#Include "DashesWithTrigger.ahk"
+#Include "DashesTrigger.ahk"
 
-#Include "HappyDayWithTrigger.ahk"
+#Include "HappyDayTrigger.ahk"
