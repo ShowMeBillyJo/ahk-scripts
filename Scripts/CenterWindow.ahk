@@ -2,9 +2,8 @@
 #Warn
 
 /*
-Center a window on its monitor following the parameter conventions of the built-in Win functions.
-
-For information about WinTitle and related parameters, see https://www.autohotkey.com/docs/v2/misc/WinTitle.htm
+Center a window on its monitor, following the parameter conventions of the built-in Win functions. For information about
+WinTitle and related parameters, see https://www.autohotkey.com/docs/v2/misc/WinTitle.htm
 
 Adapted from https://www.autohotkey.com/boards/viewtopic.php?p=78862#p78862
 */
