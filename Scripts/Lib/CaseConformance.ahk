@@ -23,13 +23,14 @@ functionality, the hotstring trigger must be implemented in a pattern similar to
             SendText(greeting)
         }
 
-This library uses A_ThisHotkey as a proxy for the value the user actually typed. The algorithm ignores the hotstring
+The main function is DetectTypedCase(), which returns one of 3 constant values: X_CaseUpper, X_CaseFirstUpper, and
+X_CaseLower. It uses A_ThisHotkey as a proxy for the value the user actually typed. The algorithm ignores the hotstring
 options (everything up to and including the second colon (:)), ensuring it acts only on the matching trigger string
 ("BTW", "Btw", or "btw"). Since the hotstrings "BTW" and "Btw" have case-sensitivity enabled while "btw" doesn't, this
 results in the two specific cases (X_CaseUpper and X_CaseFirstUpper) and the default case (X_CaseLower) needed for case
 conformance.
 
-If the Trigger parameter is an empty string ("") after trimming, the phrase is rendered with X_CaseLower.
+If the Trigger parameter is an empty string ("") after trimming, the function returns the default case (X_CaseLower).
 
 For more information about case conformance, see https://www.autohotkey.com/docs/v2/Hotstrings.htm#Options
 
