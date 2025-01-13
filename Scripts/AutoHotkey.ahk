@@ -7,6 +7,4 @@ Distributed under the Unlicense <https://unlicense.org>
 
 #Include "CenterWindowTrigger.ahk"
 
-#Include "DashesTrigger.ahk"
-
 #Include "HappyDayTrigger.ahk"
