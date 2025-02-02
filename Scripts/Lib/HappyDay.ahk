@@ -9,9 +9,9 @@ full functionality, the hotstring trigger must be implemented in a pattern simil
     :C:HAPPYDAY::
     :C:Happyday::
     : :happyday::
-        {
-            SendHappyDay(A_ThisHotkey)
-        }
+    {
+        SendHappyDay(ThisHotkey)
+    }
 
 For more information about this implementation of case conformance, see CaseConformance.ahk
 

@@ -11,6 +11,6 @@ Distributed under the Unlicense <https://unlicense.org>
 :C:HAPPYDAY::
 :C:Happyday::
 : :happyday::
-    {
-        SendHappyDay(A_ThisHotkey)
-    }
+{
+    SendHappyDay(ThisHotkey)
+}

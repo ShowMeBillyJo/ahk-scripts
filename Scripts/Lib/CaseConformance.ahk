@@ -9,22 +9,22 @@ functionality, the hotstring trigger must be implemented in a pattern similar to
     :C:BTW::
     :C:Btw::
     : :btw::
-        {
-            ; Detect how the trigger string was typed
-            typedCase := DetectTypedCase(A_ThisHotkey)
+    {
+        ; Detect how the trigger string was typed
+        typedCase := DetectTypedCase(ThisHotkey)
 
-            ; Only capitalize "by" if the only capital letter in the trigger string was the first one
-            greeting := (typedCase = X_CaseFirstUpper ? "B" : "b") "y the way" A_EndChar
+        ; Only capitalize "by" if the only capital letter in the trigger string was the first one
+        greeting := (typedCase = X_CaseFirstUpper ? "B" : "b") "y the way" A_EndChar
 
-            ; Convert the entire string to caps if the trigger string was itself all caps
-            if typedCase = X_CaseUpper
-                greeting := StrUpper(greeting)
+        ; Convert the entire string to caps if the trigger string was itself all caps
+        if typedCase = X_CaseUpper
+            greeting := StrUpper(greeting)
 
-            SendText(greeting)
-        }
+        SendText(greeting)
+    }
 
 The main function is DetectTypedCase(), which returns one of 3 constant values: X_CaseUpper, X_CaseFirstUpper, and
-X_CaseLower. It uses A_ThisHotkey as a proxy for the value the user actually typed. The algorithm ignores the hotstring
+X_CaseLower. It uses ThisHotkey as a proxy for the value the user actually typed. The algorithm ignores the hotstring
 options (everything up to and including the second colon (:)), ensuring it acts only on the matching trigger string
 ("BTW", "Btw", or "btw"). Since the hotstrings "BTW" and "Btw" have case-sensitivity enabled while "btw" doesn't, this
 results in the two specific cases (X_CaseUpper and X_CaseFirstUpper) and the default case (X_CaseLower) needed for case
@@ -47,7 +47,7 @@ DetectTypedCase(Trigger)
     ; If Trigger contains non-alpha symbols, will always return X_CaseLower
 
     ; Trim options from the trigger, if present
-    ; Required for compatibility with A_ThisHotkey workaround
+    ; Required for compatibility with ThisHotkey workaround
     triggerString := TrimHotstringOptions(Trigger)
 
     ; Trim whitespace
