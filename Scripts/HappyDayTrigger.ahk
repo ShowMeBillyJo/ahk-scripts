@@ -10,11 +10,11 @@ Distributed under the Unlicense <https://unlicense.org>
 
 ; Insert "happy <day_of_week>" with the trigger string "happyday" while replicating the standard case conformance
 ; functionality.
-:C:HAPPYDAY::
-:C:Happyday::
-: :happyday::
+:CX:HAPPYDAY:: SendHappyDay(X_CaseUpper)
+:CX:Happyday:: SendHappyDay(X_CaseFirstUpper)
+: X:happyday:: SendHappyDay(X_CaseLower)
+
+SendHappyDay(OutputCase)
 {
-    ; Detect how the trigger string was typed
-    typedCase := DetectTypedCase(ThisHotkey)
-    SendText(GetHappyDay(typedCase) A_EndChar)
+    SendText(GetHappyDay(OutputCase) A_EndChar)
 }
