@@ -5,6 +5,8 @@
 Distributed under the Unlicense <https://unlicense.org>
 */
 
+#Include "Lib\Autoclick.ahk"
+
 ; Start autoclicking when Win+Alt+{mouse button} are clicked and held. Win+Alt may be released, but {mouse button} must
 ; be held to keep autoclicking. Release {mouse button} to stop autoclicking.
 #!LButton:: AutoclickWithHold("LButton")
@@ -14,9 +16,7 @@ Distributed under the Unlicense <https://unlicense.org>
 AutoclickWithHold(MouseButton)
 {
     A_MenuMaskKey := "vkE8" ; Specific to Win and Alt modifiers
-    SetKeyDelay(15, 5) ; defaults are 10, -1
-    while GetKeyState(MouseButton, "P")
-        SendEvent("{" MouseButton "}")
+    Autoclick(MouseButton)
 }
 
 ; Start autoclicking when Shift+Win+Alt+{mouse button} are clicked. Click {mouse button} again to stop autoclicking.
@@ -27,7 +27,5 @@ AutoclickWithHold(MouseButton)
 AutoclickWithoutHold(MouseButton)
 {
     A_MenuMaskKey := "vkE8" ; Specific to Win and Alt modifiers
-    SetKeyDelay(15, 5) ; defaults are 10, -1
-    while !GetKeyState(MouseButton, "P")
-        SendEvent("{" MouseButton "}")
+    Autoclick(MouseButton, False)
 }
