@@ -2,39 +2,22 @@
 #Warn
 
 /*
-Output the phrase "happy <day_of_week>", replicating the standard case conformance pattern as closely as possible. For
-full functionality, the hotstring trigger must be implemented in a pattern similar to the following:
-
-    ; Insert "happy <day_of_week>" with the trigger string "happyday".
-    :C:HAPPYDAY::
-    :C:Happyday::
-    : :happyday::
-    {
-        SendHappyDay(ThisHotkey)
-    }
-
-For more information about this implementation of case conformance, see CaseConformance.ahk
+Output the phrase "happy <day_of_week>", with options for replicating the standard case conformance pattern as closely
+as possible. For more information about this implementation of case conformance, see CaseConformance.ahk
 
 Distributed under the Unlicense <https://unlicense.org>
 */
 
 #Include "CaseConformance.ahk"
 
-SendHappyDay(Trigger?)
+GetHappyDay(OutputCase)
 {
-    SendText(HappyDay(Trigger?))
-}
+    ; By default, the phrase will be returned in all lowercase
+    ; Only capitalize "happy" if the case conformance is FirstUpper
+    greeting := (OutputCase = X_CaseFirstUpper ? "H" : "h") "appy " A_DDDD
 
-HappyDay(Trigger := "")
-{
-    ; Detect how the trigger string was typed
-    typedCase := DetectTypedCase(Trigger)
-
-    ; Only capitalize "happy" if the only capital letter in the trigger string was the first one
-    greeting := (typedCase = X_CaseFirstUpper ? "H" : "h") "appy " A_DDDD A_EndChar
-
-    ; Convert the entire string to caps if the trigger string was itself all caps
-    if typedCase = X_CaseUpper
+    ; Convert the entire string to caps if the case conformance is Upper
+    if OutputCase = X_CaseUpper
         greeting := StrUpper(greeting)
 
     return greeting
