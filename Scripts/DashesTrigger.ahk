@@ -9,10 +9,10 @@ Distributed under the Unlicense <https://unlicense.org>
 
 ; Insert a dash on the hotstring sequence of two or more hyphens. If the end char is a hyphen (ie, three hyphens in a
 ; row), write an em dash, else an en dash.
-:?X:--::SendText((A_EndChar = "-") ? X_EmDash : X_EnDash)
+:?X:--:: SendText((A_EndChar = "-") ? X_EmDash : X_EnDash)
 
 ; Insert an en dash upon pressing Alt+[hyphen].
-!-::SendEnDash()
+!-:: SendText(X_EnDash)
 
 ; Insert an em dash upon pressing Shift+Alt+[hyphen].
-+!-::SendEmDash()
++!-:: SendText(X_EmDash)

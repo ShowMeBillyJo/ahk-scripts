@@ -9,13 +9,3 @@ Distributed under the Unlicense <https://unlicense.org>
 
 X_EnDash := "–"
 X_EmDash := "—"
-
-SendEnDash()
-{
-    SendText(X_EnDash)
-}
-
-SendEmDash()
-{
-    SendText(X_EmDash)
-}
