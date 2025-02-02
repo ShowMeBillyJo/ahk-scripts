@@ -9,7 +9,7 @@ Distributed under the Unlicense <https://unlicense.org>
 #Include "Lib\HappyDay.ahk"
 
 ; Insert "happy <day_of_week>" with the trigger string "happyday" while replicating the standard case conformance
-; functionality.
+; functionality and preserving the end char.
 :CX:HAPPYDAY:: SendHappyDay(X_CaseUpper)
 :CX:Happyday:: SendHappyDay(X_CaseFirstUpper)
 : X:happyday:: SendHappyDay(X_CaseLower)
