@@ -17,7 +17,7 @@ WinMoveToCenterOnCurrentMonitor(WinTitle?, WinText?, ExcludeTitle?, ExcludeText?
 
     ; Get the same window's current width/height using the Last Found Window convention
     ; This convention is repeated throughout the rest of the script
-    WinGetPos( , , &windowWidth, &windowHeight)
+    WinGetPos(, , &windowWidth, &windowHeight)
 
     ; Get info about the monitor the window is on
     monitorHandle := DllCall("MonitorFromWindow", "Ptr", windowHandle, "UInt", 0x2)
