@@ -5,18 +5,29 @@
 Distributed under the Unlicense <https://unlicense.org>
 */
 
-; Autoclick if holding Win+Alt+[mouse button].
+; Start autoclicking when Win+Alt+{mouse button} are clicked and held. Win+Alt may be released, but {mouse button} must
+; be held to keep autoclicking. Release {mouse button} to stop autoclicking.
+#!LButton:: AutoclickWithHold("LButton")
+#!RButton:: AutoclickWithHold("RButton")
+#!MButton:: AutoclickWithHold("MButton")
 
-#!LButton:: Autoclick("LButton")
-
-#!RButton:: Autoclick("RButton")
-
-#!MButton:: Autoclick("MButton")
-
-Autoclick(Button)
+AutoclickWithHold(MouseButton)
 {
-    A_MenuMaskKey := "vkE8"
+    A_MenuMaskKey := "vkE8" ; Specific to Win and Alt modifiers
     SetKeyDelay(15, 5) ; defaults are 10, -1
-    while GetKeyState(Button, "P")
-        SendEvent("{" Button "}")
+    while GetKeyState(MouseButton, "P")
+        SendEvent("{" MouseButton "}")
+}
+
+; Start autoclicking when Shift+Win+Alt+{mouse button} are clicked. Click {mouse button} again to stop autoclicking.
++#!LButton Up:: AutoclickWithoutHold("LButton")
++#!RButton Up:: AutoclickWithoutHold("RButton")
++#!MButton Up:: AutoclickWithoutHold("MButton")
+
+AutoclickWithoutHold(MouseButton)
+{
+    A_MenuMaskKey := "vkE8" ; Specific to Win and Alt modifiers
+    SetKeyDelay(15, 5) ; defaults are 10, -1
+    while !GetKeyState(MouseButton, "P")
+        SendEvent("{" MouseButton "}")
 }
