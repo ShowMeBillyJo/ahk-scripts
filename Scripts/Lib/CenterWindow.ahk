@@ -6,6 +6,7 @@ Center a window on its monitor, following the parameter conventions of the built
 Win parameters and Last Found Window, see https://www.autohotkey.com/docs/v2/misc/WinTitle.htm
 
 Adapted from https://www.autohotkey.com/boards/viewtopic.php?p=78862#p78862
+Reproduced under fair use. No rights reserved.
 
 Distributed under the Unlicense <https://unlicense.org>
 */

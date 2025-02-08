@@ -8,8 +8,9 @@ Morse Function (To detect single, double, triple or ... , short or long press)
 Set patternSequence to 3 or even 2 for better performance. However, this will decrease the number of patterns detected.
 
 Adapted from https://stackoverflow.com/a/77838645/3447
-
 Reproduced under fair use. No rights reserved.
+
+Distributed under the Unlicense <https://unlicense.org>
 */
 
 Morse(Timeout := 200, PatternSequence := 10)
