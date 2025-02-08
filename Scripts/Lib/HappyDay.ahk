@@ -2,7 +2,7 @@
 #Warn
 
 /*
-Output the phrase "happy <day_of_week>", with options for replicating the standard case conformance pattern as closely
+Return the phrase "happy <day_of_week>", with options for replicating the standard case conformance pattern as closely
 as possible. For more information about this implementation of case conformance, see CaseConformance.ahk
 
 Distributed under the Unlicense <https://unlicense.org>
